@@ -89,5 +89,5 @@ if(!isset($route_conf['user']))
     echo "route config error";
 }
 $http_server->bind_func($route_conf['user']);
-$http_server->start_server("192.168.2.235",8080);
+$http_server->start_server($conf["http"]["host"],$conf["http"]["port"]);
 

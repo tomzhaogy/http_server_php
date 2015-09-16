@@ -26,16 +26,9 @@ return array(
                 'persistent' => 1,
                 'sphinx_use'=>1,
                 'reindex_cmd'=>'/opt/sphinx/reindex.sh'),
-    "valid_time"=>2*60,
-    "delay_time"=>30,
-    "time_out"=>10,
-    "room_container_max"=>100,
-    "room_container_limit"=>50,
-    "py"=>'pinyin-utf8.dat',
-    "robot"=>'讯鸟客服',
-    "notify_url"=>"http://xunyi-test.nvwayun.com",
     "redis"=>array('host' => '127.0.0.1','port'=>6379),
+    "http"=>array('host' => '192.168.2.235','port'=>8080),
+    //"http"=>array('host' => '10.122.75.227','port'=>8080),
     'gearman'=>array('host' => '127.0.0.1','port'=>4730),
-    'xunyi_url'=>array('server'=>"http://xunyi-test.nvwayun.com/weixin/api/xunyi/",'switch'=>0)
     );
 ?>
