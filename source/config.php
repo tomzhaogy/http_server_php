@@ -15,20 +15,9 @@ return array(
                 'password' => '111111',
                 'charset' => 'utf8',
                 'persistent' => 1),
-   "sphinx" => array(
-                'host' =>'127.0.0.1',
-                'port' => 9306,
-                'sp_port' => 9312,
-                'dbname' => 'card_db',
-                'username' => 'root',
-                'password' => '111111',
-                'charset' => 'utf8',
-                'persistent' => 1,
-                'sphinx_use'=>1,
-                'reindex_cmd'=>'/opt/sphinx/reindex.sh'),
     "redis"=>array('host' => '127.0.0.1','port'=>6379),
-    "http"=>array('host' => '192.168.2.235','port'=>8080),
+    "http"=>array('host' => '0.0.0.0','port'=>8080),
+    //"http"=>array('host' => '192.168.2.235','port'=>8080),
     //"http"=>array('host' => '10.122.75.227','port'=>8080),
-    'gearman'=>array('host' => '127.0.0.1','port'=>4730),
     );
 ?>

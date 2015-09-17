@@ -6,16 +6,24 @@
  * and open the template in the editor.
  */
 include_once './common/hash_map.php';
+include_once './common/db_base.php';
  class http_server
 {
     private $hash_map;
     private $server;
+    private $db_read;
 
     public function __destruct ()
     {
         $this->hash_map->clear();
     }
 
+    public function db_init($conf,$name)
+    {
+        $this->db_read=new db_base();
+        $this->db_read->connect_db($conf, $name);
+    }
+    
     public function start_server($server_ip,$port)
     {
         $this->server = new swoole_http_server($server_ip, $port);
@@ -34,7 +42,7 @@ include_once './common/hash_map.php';
         $response->header("X-Server", "Swoole");
         if(function_exists($func))
         {
-            $result=$func($request,$response);
+            $result=$func( $this->db_read,$request,$response);
             $response->end($result);
         }else {
             //$response-> header("HTTP/1.1 404 Not Found");
@@ -83,6 +91,7 @@ include_once './common/hash_map.php';
 
 $conf= require 'config.php';
 $http_server=new http_server();
+$http_server->db_init($conf,"db");
 $route_conf= require 'route_config.php';
 if(!isset($route_conf['user']))
 {
