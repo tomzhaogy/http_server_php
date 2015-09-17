@@ -1,7 +1,4 @@
 1.http.php http基类封装
-2.cal_distance_mongodb.php mongodb中计算两点之间位置
-3.db_base.php mysql和redis数据访问接口封装
-4.db_mysql_pdo.php mysql数据接口封装
-5.hash_map.php hash_map类封装
-6.str2pinyin.php utf8汉字转拼音封装
-7.work_base.php gearman work类封装
+2.db_base.php mysql和redis数据访问接口封装
+3.db_mysql_pdo.php mysql数据接口封装
+4.hash_map.php hash_map类封装
