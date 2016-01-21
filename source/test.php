@@ -15,10 +15,12 @@ class test extends db_base
 
 	function sys( $request, $response) {
 	//return "<h1>Test "."  Tomzhao!</h1>";
+		$this->get_timestamp();
 	return "<h1>Test ".date("Y-m-d H:i:s")."  Tomzhao!</h1>";
 	}
 
 	function hello($request, $response) {
+		$this->get_timestamp();
 	 return "<h1>Hello ".date("Y-m-d H:i:s")."  Tomzhao!</h1>";
 	}
 }
