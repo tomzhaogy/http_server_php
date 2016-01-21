@@ -11,12 +11,12 @@ class db_base
 {
     private  $db_mysql;
     private  $redis;
-    public function connect_db($conf,$name) 
+    public function connect_db($conf,$db,$redis="redis") 
     {
-        $this->db_mysql=new db_mysql_pdo( array($conf[$name]));
+        $this->db_mysql=new db_mysql_pdo( array($conf[$db]));
 
         $this->redis= new Redis();
-        return $this->redis->connect($conf['redis']['host'],$conf['redis']['port'] );        
+        return $this->redis->connect($conf[$redis]['host'],$conf[$redis]['port'] );        
     }
     
     public function  setnx($strKey,$value)
